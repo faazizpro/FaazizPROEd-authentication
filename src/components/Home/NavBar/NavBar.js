@@ -24,15 +24,23 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 lg:text-3xl text-white">
-                            
-                            <li className='font-bold'><Link to='/course'>Course</Link></li>
-                            <li className='font-bold'><Link to='/faq'>FAQ</Link></li>
-                            <li className='font-bold'> <Link to='/blog'>Blog</Link></li>
+
+                        <li className='font-bold'><Link to='/course'>Course</Link></li>
+                        <li className='font-bold'><Link to='/faq'>FAQ</Link></li>
+                        <li className='font-bold'> <Link to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 lg:gap-5 ">
                     <a className="btn lg:text-2xl bg-inherit lg:border-2 border-orange-300">Sign Up</a>
                     <a className="btn lg:text-2xl bg-inherit lg:border-2 border-orange-300">Login</a>
+                    <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
+                        
+                        <span className="relative">
+                            <input id="Toggle1" type="checkbox" className="hidden peer" />
+                            <div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:bg-violet-400"></div>
+                            <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800"></div>
+                        </span>
+                    </label>
                 </div>
             </div>
         </div>

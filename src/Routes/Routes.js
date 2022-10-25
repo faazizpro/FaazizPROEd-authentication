@@ -16,7 +16,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course',
-                element: <Course></Course>
+                element: <Course></Course>,
+                loader: () => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/course/`)
             },
             {
                 path: '/faq',
