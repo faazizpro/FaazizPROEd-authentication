@@ -132,6 +132,68 @@ const CourseSideBar = () => {
                     </div>
                 </section>
             </div>
+            <div >
+                <h2 className='text-center font-semibold md:text-4xl mt-3'>Our Best <span className='text-green-400'>Instructor</span></h2>
+                <div className='justify-center md:flex md:gap-10 md:flex-wrap mt-5'>
+                    <div className="card w-64 md:w-56 bg-base-100 shadow-xl">
+                        <figure><img src="https://placeimg.com/224/126/people" alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                            Jacob Jones
+
+                            </h2>
+                            
+                            <div className="card-actions justify-center">
+                                <div className="badge badge-outline">UI-UX Design Expert</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card w-64 md:w-56 bg-base-100 shadow-xl">
+                        <figure><img src="https://placeimg.com/224/126/people" alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                            Robert Fox
+
+                            </h2>
+                            
+                            <div className="card-actions justify-center">
+                                <div className="badge badge-outline">SEO Expert</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card w-64 md:w-56 bg-base-100 shadow-xl">
+                        <figure><img src="https://placeimg.com/224/126/people" alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                            Henry Watt
+
+                            </h2>
+                            
+                            <div className="card-actions justify-center">
+                                <div className="badge badge-outline">Digital Marketer</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card w-64 md:w-56 bg-base-100 shadow-xl">
+                        <figure><img src="https://placeimg.com/224/126/people" alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">
+                            Peter Parker
+
+                            </h2>
+                            
+                            <div className="card-actions justify-center">
+                                <div className="badge badge-outline">MERN Stack</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
     );

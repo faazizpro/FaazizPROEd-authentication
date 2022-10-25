@@ -7,7 +7,7 @@ const CourseList = ({ scourse }) => {
     const { name, id, img, info, price, user } = scourse;
     console.log(scourse);
     return (
-        <section className="bg-gray-900 text-white md:mb-5 rounded-2xl">
+        <section className="bg-gray-900 text-white md:mb-20 rounded-2xl">
             <div className="">
                 <div
                     className="block rounded-2xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
