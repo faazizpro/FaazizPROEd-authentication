@@ -1,11 +1,12 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const CourseDetail = () => {
+    const navigate = useNavigate();
     const courseData = useLoaderData();
     // console.log(courseData);
-    const { img, info, name, price, user, duration } = courseData;
+    const { img, info, name, price, user, duration, id } = courseData;
     return (
         <div className='md:flex md:justify-center mt-10  h-scree'>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md  text-gray-100 bg-gray-900">
@@ -43,14 +44,16 @@ const CourseDetail = () => {
                         </h2>
                     </div>
                 </div>
-                <div className='mb-3 md:mb-0 md:flex justify-center '>
-                        <h2
-                            className=" relative inline-flex items-center rounded bg-indigo-600 px-2 py-1 md:px-10 md:py-4 text-white ">
+                <div onClick={() => {
+                    navigate(`/enroll/${id}`);
+                }} className='mb-3 md:mb-0 md:flex justify-center '>
+                    <h2
+                        className=" relative inline-flex items-center rounded bg-indigo-600 px-2 py-1 md:px-10 md:py-4 text-white ">
 
-                            <span className="text-sm md:text-xl font-medium ">
-                                Enroll Course Now <FaArrowRight className='inline ml-2'></FaArrowRight>
-                            </span>
-                        </h2>
+                        <span className="text-sm md:text-xl font-medium ">
+                            Enroll Course Now <FaArrowRight className='inline ml-2'></FaArrowRight>
+                        </span>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -58,3 +61,4 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
+

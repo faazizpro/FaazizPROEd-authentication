@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
 import Course from "../components/Coures/Course";
 import CourseDetail from "../components/Coures/CourseDetail";
+import EnrollCourse from "../components/Coures/EnrollCourse";
 import FAQ from "../components/FAQ/FAQ";
 import HeroSection from "../components/Home/HeroSection/HeroSection";
 import Login from "../components/Login/Login";
@@ -25,6 +26,11 @@ export const routes = createBrowserRouter([
                 path: '/course/:id',
                 element: <CourseDetail></CourseDetail>,
                 loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/course/${params.id}`)
+            },
+            {
+                path: '/enroll/:id',
+                element: <EnrollCourse></EnrollCourse>,
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/enroll/${params.id}`)
             },
             {
                 path: '/faq',
