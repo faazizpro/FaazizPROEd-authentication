@@ -27,6 +27,10 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const gitLogin = (provider) =>{
+        return signInWithPopup(auth, provider);
+    }
+
     useEffect( () => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             // console.log('User Inside State Change', currentUser);
@@ -38,7 +42,7 @@ const AuthProvider = ({children}) => {
         }
     } , [])
 
-    const AuthInfo = {user, googleLogin, logOut, createUser, signIn}
+    const AuthInfo = {user, googleLogin, logOut, createUser, signIn, gitLogin}
     return (
         <AuthContext.Provider value={AuthInfo}>
             {children}

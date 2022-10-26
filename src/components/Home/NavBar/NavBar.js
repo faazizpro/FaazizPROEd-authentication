@@ -54,7 +54,7 @@ const NavBar = () => {
 
                     <Link className=" text-base lg:text-xl bg-inherit  border-orange-300">
                         {user ?
-                            <img className='rounded-full md:w-2/3'  src={user.photoURL} title={user.displayName} alt="" /> :
+                            <img className='rounded-full md:w-20'  src={user.photoURL} title={user.displayName} alt="" /> :
                             <Link to='/login' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Login</Link>
                         }
                     </Link>
