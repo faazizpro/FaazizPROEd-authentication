@@ -6,6 +6,7 @@ import EnrollCourse from "../components/Coures/EnrollCourse";
 import FAQ from "../components/FAQ/FAQ";
 import HeroSection from "../components/Home/HeroSection/HeroSection";
 import Login from "../components/Login/Login";
+import SignUp from "../components/SignUp/SignUp";
 import Main from "../layout/Main";
 
 export const routes = createBrowserRouter([
@@ -43,6 +44,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             }
         ]
     }

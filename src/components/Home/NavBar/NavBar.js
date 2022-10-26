@@ -6,7 +6,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const NavBar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+         .then( () => {})
+         .catch( error => console.log(error));
+    }
 
     return (
         <div className='m-0'>
@@ -36,7 +42,15 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 lg:gap-5">
-                    <Link to='' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Up</Link>
+                    <Link to='/signup' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Up</Link>
+
+
+                    {user ?
+                        <Link to='' onClick={handleLogOut} className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Out</Link> :
+                        null
+                    }
+
+
                     <Link className=" text-base lg:text-xl bg-inherit  border-orange-300">
                         {user ?
                             <img className='rounded-full md:w-2/3'  src={user.photoURL} title={user.displayName} alt="" /> :
