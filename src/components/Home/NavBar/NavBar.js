@@ -42,7 +42,8 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2 lg:gap-5">
-                    <Link to='/signup' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Up</Link>
+                    {   !user &&
+                        <Link to='/signup' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Up</Link>}
 
 
                     {user ?

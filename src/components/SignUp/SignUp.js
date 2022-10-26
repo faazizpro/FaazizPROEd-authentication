@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser, user } = useContext(AuthContext);
 
 
-    const handleSubmit = event =>{
+    const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -15,13 +15,13 @@ const SignUp = () => {
         const password = form.password.value;
         console.log(name, email, password);
         createUser(email, password)
-          .then( result => {
-            const user = result.user;
-            console.log(user);
-          })
-          .catch( error => {
-            console.log('Error: ', error);
-          })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log('Error: ', error);
+            })
     }
     return (
         <div className='bg-gray-900 md:flex justify-center h-screen'>
@@ -46,13 +46,13 @@ const SignUp = () => {
                             </div>
                             <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100" />
                         </div>
-                                <Link to='/login' rel="noopener noreferrer" className="text-xs hover:underline text-gray-400">Already have an account? Please Login</Link>
+                        <Link to='/login' rel="noopener noreferrer" className="text-xs hover:underline text-gray-400">Already have an account? Please Login</Link>
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign Up</button>
+                                <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign Up</button>
                         </div>
-                        
+
                     </div>
                 </form>
             </div>

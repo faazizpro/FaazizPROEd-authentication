@@ -1,11 +1,18 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 
 const Login = () => {
+    const [error,setError] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
     const {googleLogin , signIn} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
@@ -14,6 +21,7 @@ const Login = () => {
           .then (result =>{
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true});
             
           })
           .catch( error => {
@@ -30,10 +38,13 @@ const Login = () => {
         .then (result =>{
             const user = result.user;
             console.log(user);
-            form.reset()
+            setError('')
+            form.reset();
+            navigate(from, {replace: true});
           })
           .catch( error => {
             console.log('error: ', error);
+            setError(error.message)
           })
     }
 
@@ -79,7 +90,7 @@ const Login = () => {
                             </div>
                     </div>
                     <div>
-                        <h2 className='text-red-500'>Error error</h2>
+                        <h2 className='text-red-500'>{error}</h2>
                     </div>
                     <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign in</button>
                 </form>

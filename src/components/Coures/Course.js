@@ -19,7 +19,16 @@ const Course = () => {
                 </div>
             </div>
             <div className=' md:flex-initial md:w-2/6'>
-                <CourseSideBar></CourseSideBar>
+                <h2 className='text-center font-bold md:text-5xl mt-3'>Our All Courses</h2>
+                    <div className='text-center font-bold md:text-5xl mt-3'>
+                    {   
+                        courses.map(scourse => <CourseSideBar
+                        key={scourse.id}
+                        scourse={scourse}
+                        ></CourseSideBar>)
+                    }
+                    </div>
+                
             </div>
         </div>
     );

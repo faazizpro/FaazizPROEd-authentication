@@ -55,7 +55,7 @@ const CourseCard = () => {
                     </span>
 
                     <span className="text-sm font-medium transition-all group-hover:mr-4">
-                        Read More
+                        All Courses
                     </span>
                 </Link>
             </div>

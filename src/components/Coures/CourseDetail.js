@@ -45,7 +45,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
                 <div onClick={() => {
-                    navigate(`/enroll/${id}`);
+                    navigate(`/checkout/${id}`);
                 }} className='mb-3 md:mb-0 md:flex justify-center '>
                     <h2
                         className=" relative inline-flex items-center rounded bg-indigo-600 px-2 py-1 md:px-10 md:py-4 text-white ">

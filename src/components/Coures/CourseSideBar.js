@@ -1,11 +1,19 @@
 import React from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const CourseSideBar = () => {
+const CourseSideBar = ({ scourse }) => {
+    const navigate = useNavigate();
+    console.log(scourse);
+    const { name, price, id } = scourse;
+
     return (
-        <div>
-            <div>
+        <div className=''>
+            {/* <div>
                 <h2 className='text-center font-bold md:text-5xl mt-3'>About Us</h2>
+                
                 <section className="p-4 my-6 md:p-8 bg-gray-800 rounded-2xl text-gray-100">
+                    
                     <div className="container grid grid-cols-1 gap-6 m-4 mx-auto md:m-0 md:grid-cols-2 xl:grid-cols-3">
                         <div className="flex overflow-hidden rounded-lg bg-gray-900 text-gray-100">
                             <div className="flex items-center justify-center px-4 bg-violet-400 text-gray-800">
@@ -191,6 +199,18 @@ const CourseSideBar = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+            </div> */}
+
+            <div className="stats shadow mb-5 md:w-3/5 ">
+
+                <div onClick={() => {
+                            navigate(`/course/${id}`);
+                        }} className="stat bg-lime-500 md:text-2xl cursor-pointer">
+                    <h2>
+                    {name} <FaArrowRight className='inline-block'></FaArrowRight>
+                    </h2>
                 </div>
 
             </div>

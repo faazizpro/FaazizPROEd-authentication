@@ -8,6 +8,7 @@ import HeroSection from "../components/Home/HeroSection/HeroSection";
 import Login from "../components/Login/Login";
 import SignUp from "../components/SignUp/SignUp";
 import Main from "../layout/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -29,9 +30,9 @@ export const routes = createBrowserRouter([
                 loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/course/${params.id}`)
             },
             {
-                path: '/enroll/:id',
-                element: <EnrollCourse></EnrollCourse>,
-                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/enroll/${params.id}`)
+                path: '/checkout/:id',
+                element: <PrivateRoute><EnrollCourse></EnrollCourse></PrivateRoute>,
+                loader: ({params}) => fetch(`https://b610-lerning-platform-server-side-faazizpro.vercel.app/checkout/${params.id}`)
             },
             {
                 path: '/faq',
