@@ -2,8 +2,12 @@ import React from 'react';
 import './Navbar.css'
 import logo from '../../../Assets/logo.png'
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const NavBar = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <div className='m-0'>
             <div className="navbar bg-gray-900">
@@ -28,13 +32,21 @@ const NavBar = () => {
                         <li className='font-bold'><Link to='/course'>Course</Link></li>
                         <li className='font-bold'><Link to='/faq'>FAQ</Link></li>
                         <li className='font-bold'> <Link to='/blog'>Blog</Link></li>
+
                     </ul>
                 </div>
-                <div className="navbar-end gap-2 lg:gap-5 ">
-                    <a className="btn lg:text-2xl bg-inherit lg:border-2 border-orange-300">Sign Up</a>
-                    <a className="btn lg:text-2xl bg-inherit lg:border-2 border-orange-300">Login</a>
+                <div className="navbar-end gap-2 lg:gap-5">
+                    <Link to='' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Sign Up</Link>
+                    <Link className=" text-base lg:text-xl bg-inherit  border-orange-300">
+                        {user ?
+                            <img className='rounded-full md:w-2/3'  src={user.photoURL} title={user.displayName} alt="" /> :
+                            <Link to='/login' className="btn text-base lg:text-xl bg-inherit lg:border-2 border-orange-300">Login</Link>
+                        }
+                    </Link>
+
+
                     <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
-                        
+
                         <span className="relative">
                             <input id="Toggle1" type="checkbox" className="hidden peer" />
                             <div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:bg-violet-400"></div>
