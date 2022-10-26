@@ -3,6 +3,7 @@ import Blog from "../components/Blog/Blog";
 import Course from "../components/Coures/Course";
 import CourseDetail from "../components/Coures/CourseDetail";
 import EnrollCourse from "../components/Coures/EnrollCourse";
+import Error from "../components/Error/Error";
 import FAQ from "../components/FAQ/FAQ";
 import HeroSection from "../components/Home/HeroSection/HeroSection";
 import Login from "../components/Login/Login";
@@ -49,6 +50,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '*',
+                element: <Error></Error>
             }
         ]
     }
